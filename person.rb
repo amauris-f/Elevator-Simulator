@@ -24,8 +24,4 @@ class Person
 		elv.go_to(destination)
 		@start = nil
 	end
-
-	def to_s
-		return "[#{start}, #{destination}]"
-	end
 end
