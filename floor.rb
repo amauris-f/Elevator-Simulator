@@ -1,14 +1,15 @@
 class Floor
+	attr_reader :floor_number, :persons
 	@persons
 	@left
-	@arived
-	attr_reader :floor_number, :persons
+	@arrived
+
 	def initialize(floor_number, persons)
 		@floor_number = floor_number
 		@persons = persons_in_floor(persons)
 		@@simulation.register(self)
 		@left = 0
-		@arived = 0
+		@arrived = 0
 	end	
 
 	def persons_in_floor(persons)
@@ -35,16 +36,16 @@ class Floor
 	def count_arriving(elv)
 		persons_lvng_elv = elv.passengers
 		persons_lvng_elv.each do |person|
-			if person.destination == floor_number then @arived += 1 end
+			if person.destination == floor_number then @arrived += 1 end
 		end
 	end
 
 	def floor_info
 		num_persons = @persons.size
-		temp_arived = @arived
+		temp_arrived = @arrived
 		temp_left = @left
 		@left = 0
-		@arived = 0
-		return "\t# of Passengers waiting: #{num_persons}, departed: #{temp_left}, arrived: #{temp_arived} "
+		@arrived = 0
+		return "\t# of Passengers waiting: #{num_persons}, departed: #{temp_left}, arrived: #{temp_arrived} "
 	end
 end
