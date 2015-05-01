@@ -3,7 +3,7 @@ class Elevator
 	@@button_calls = Array.new()
 	@dest_queue
 	@stopped
-	def initialize(number_of_floors)
+	def initialize()
 		@button_pickups = Array.new()
 		@position = 0
 		@passengers = Array.new()
