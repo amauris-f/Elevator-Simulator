@@ -23,7 +23,7 @@ class Building
 
 	def create_elevators		
 		number_of_elevators.times do |elv_num|
-			elevators[elv_num] = Elevator.new(number_of_floors)
+			elevators[elv_num] = Elevator.new()
 		end
 	end
 
