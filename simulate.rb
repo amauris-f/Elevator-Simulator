@@ -2,7 +2,7 @@ class Simulate
 	@registered
 
 	def initialize()
-		@registered = Array.new
+		@registered = Array.new()
 	end
 
 	def register(domain_instance) 
